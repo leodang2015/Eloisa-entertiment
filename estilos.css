@@ -10,17 +10,24 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: 19px 60px;
     background: white;
-    border-radius: 80px;;
+    z-index: 2    ;
+}
+.mantenimiento {
+    position: fixed;
+    background: white;
+    
 }
 
 /* menú derecha */
 .header ul{
+    position: fixed;
     display: flex;
     gap: 20px;
     list-style: none;
-    margin-left: auto;
+    padding: 5% 50%;
+    margin: 1% 20% 1% 1%;
+    border-radius: 15%;
 }
 
 /* botones */
@@ -32,11 +39,17 @@
     color: black;
     box-shadow: 0 5px 0 #00c2c7;
 }
+.logo {
+    position: fixed;
+    width: 150px;
+    margin: 0% 5%;
+    z-index: 1;
+}
 
 /* NUBE */
 .nube{
-    position: absolute;
-    top: -30px;
+    position: fixed;
+    top: -70px;
     left: 0;
     width: 100%;
     height: 100px; 
@@ -54,23 +67,20 @@
 }
 
 /* posiciones (forma de nube) */
-.b1{ width:120px; height:120px; left:50px; top:0; }
-.b2{ width:140px; height:140px; left:140px; top:-20px; }
-.b3{ width:120px; height:120px; left:260px; top:0; }
-.b4{ width:140px; height:140px; left:380px; top:-15px; }
-.b5{ width:120px; height:120px; left:520px; top:0; }
-.b6{ width:130px; height:130px; left:650px; top:-10px; }
-.b7{ width:120px; height:120px; left:770px; top:0; }
-.b8{ width:140px; height:140px; left:890px; top:-20px; }
-.b9{ width:120px; height:120px; left:1010px; top:0; }
-.b10{ width:130px; height:130px; left:1130px; top:-15px; }
-.b11{ width:120px; height:120px; left:1250px; top:0; }
+.b2{ width:230px; height:280px; left:5px; top:-20px; }
+.b3{ width:210px; height:260px; left:170px; top:0; }
+.b4{ width:230px; height:280px; left:325px; top:-15px; }
+.b5{ width:210px; height:260px; left: 490px; top:0; }
+.b6{ width:230px; height:280px; left:640px; top:-10px; }
+.b7{ width:210px; height:260px; left:760px; top:0; }
+.b8{ width:230px; height:280px; left:890px; top:-20px; }
+.b9{ width:210px; height:260px; left:1050px; top:0; }
 /* HERO */
 
 .hero {
     display: flex;
     height: 700px;
-    margin: 20px 20%;
+    margin: 17% 20% 8% 20%;
     background: #ff6b6b;
     width: 800px;
     background: radial-gradient(circle, rgba(255, 204, 0, 0.8), rgba(255, 140, 0, 0.5)),
@@ -113,7 +123,6 @@
     
     /* Animación */
     position: relative;
-    overflow: hidden;
 }
 
 /* Efecto de brillo animado (el toque "vivo") */
@@ -140,7 +149,6 @@
     100% { left: 150%; }
 }
 .servicios:hover {
-    transform: translateY(-5px); /* Se eleva un poco */
     transition: transform 0.3s ease;
     filter: brightness(1.1); /* Se ilumina sutilmente */
 }
@@ -210,6 +218,7 @@
 
 /* GALERÍA */
 .galeria {
+    background-color: green;
     padding: 50px;
     text-align: center;
 }
@@ -226,8 +235,9 @@
 
 /* CONTACTO */
 .contacto {
-    padding: 50px;
+    padding: 500px;
     text-align: center;
+    background-color: green;
 }
 
 .contenedor-contacto {
