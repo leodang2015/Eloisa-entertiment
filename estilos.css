@@ -100,6 +100,49 @@
 .servicios {
     padding: 50px;
     text-align: center;
+    margin: 0% 1% 0% 1%;
+    border-radius: 8px;
+    border: 4px solid #5d2e2e;
+
+    /* Textura de madera mejorada */
+    background: 
+        linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px), /* Separación de tablones */
+        linear-gradient(#8b4513 2px, transparent 2px),               /* Vetas horizontales */
+        linear-gradient(90deg, #a0522d, #8b4513);                   /* Color base */
+    background-size: 100px 100%, 100% 4px, 100% 100%;
+    
+    /* Animación */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo animado (el toque "vivo") */
+.servicios::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    transform: skewX(-25deg);
+    animation: madera-brillo 5s infinite;
+}
+
+@keyframes madera-brillo {
+    0% { left: -100%; }
+    20% { left: 150%; }
+    100% { left: 150%; }
+}
+.servicios:hover {
+    transform: translateY(-5px); /* Se eleva un poco */
+    transition: transform 0.3s ease;
+    filter: brightness(1.1); /* Se ilumina sutilmente */
 }
 
 .contenedor-servicios {
@@ -114,6 +157,55 @@
     padding: 20px;
     border-radius: 10px;
     width: 220px;
+}
+
+.columna {
+    margin: 0%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Base común para estilo madera */
+.columna-1, .columna-2 {
+    padding: 20px;
+    width: 220px;
+    margin: 0% 20%;
+    text-align: center;
+    border-radius: 5px; /* Bordes menos redondeados para que parezca corte de madera */
+    
+    /* Degradado base: Café oscuro a café medio */
+    background: linear-gradient(135deg, #5d2e2e 0%, #8b4513 100%);
+    
+    /* Efecto de relieve y profundidad */
+    border: 2px solid #3e1f1f;
+    color: #f1d2b5; /* Color crema para el texto para que resalte */
+}
+
+/* Columna 1: Estilo madera de pino (más clara/rojiza) */
+.columna-1 {
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            rgba(0,0,0,0.05) 0px,
+            rgba(0,0,0,0.05) 1px,
+            transparent 1px,
+            transparent 40px
+        ),
+        #a0522d;
+}
+
+/* Columna 2: Estilo madera de roble (más oscura y robusta) */
+.columna-2 {
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(0,0,0,0.1) 0px,
+            rgba(0,0,0,0.1) 2px,
+            transparent 2px,
+            transparent 4px
+        ),
+        #a0522d;
 }
 
 /* GALERÍA */
