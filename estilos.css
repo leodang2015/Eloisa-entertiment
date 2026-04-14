@@ -4,33 +4,44 @@
     box-sizing: border-box;
     font-family: Arial;
 }
+body {
+    background-color: aqua;
+    overflow-x: hidden; /* 🔥 clave */
+}
+
+/* Botones de navegación */
+#inicio {
+    scroll-margin-top: 120px;
+}
+
+#servicios {
+    scroll-margin-top: 220px;
+}
+
+#galeria {
+    scroll-margin-top: 220px;
+}
+
+#contacto {
+    scroll-margin-top: 120px;
+}
 
 /* HEADER */
-.header{
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: white;
-    z-index: 2    ;
-}
-.mantenimiento {
-    position: fixed;
-    background: white;
-    
-}
 
 /* menú derecha */
-.header ul{
-    position: fixed;
+.header ul {
+    position: absolute; /* Lo sacamos del flujo para moverlo libremente */
+    top: 50px;         /* Ajusta este valor para subirlo más (ej: 0 o -10px) */
+    right: 40px;       /* Ajusta la distancia desde la derecha */  
     display: flex;
     gap: 20px;
     list-style: none;
-    padding: 5% 50%;
-    margin: 1% 20% 1% 1%;
-    border-radius: 15%;
+    padding: 0;        /* Eliminamos los paddings extraños */
+    margin: 0;
+    position: fixed;
 }
 
-/* botones */
+
 .header a{
     padding: 10px 18px;
     background: #7df9ff;
@@ -38,27 +49,33 @@
     text-decoration: none;
     color: black;
     box-shadow: 0 5px 0 #00c2c7;
+    white-space: nowrap; /* 🔥 evita que se partan */
 }
 .logo {
+    width: 120px;
+    height: 120px;
     position: fixed;
-    width: 150px;
-    margin: 0% 5%;
-    z-index: 1;
 }
 
 /* NUBE */
-.nube{
+.nube {
     position: fixed;
-    top: -70px;
-    left: 0;
-    width: 100%;
-    height: 100px; 
-    z-index: -1;/* 🔥 antes -1 */
-}
-.header{
-    overflow: visible;
+    top: -15%;
+    width: 180%;
+    height: 180px; /* Definimos una altura base para que el % de los bultos sepa cuánto medir */
+    z-index: -1;
+    pointer-events: none; /* Para que no interfiera con los clics en el menú */
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px; /* Reducimos un poco el padding */
+    position: relative;
+    z-index: 10;    
+    overflow: visible; /* Permitimos que los bultos de la nube cuelguen hacia abajo */
+}
 /* base de bultos */
 .bulto{
     position: absolute;
@@ -67,45 +84,74 @@
 }
 
 /* posiciones (forma de nube) */
-.b2{ width:230px; height:280px; left:5px; top:-20px; }
-.b3{ width:210px; height:260px; left:170px; top:0; }
-.b4{ width:230px; height:280px; left:325px; top:-15px; }
-.b5{ width:210px; height:260px; left: 490px; top:0; }
-.b6{ width:230px; height:280px; left:640px; top:-10px; }
-.b7{ width:210px; height:260px; left:760px; top:0; }
-.b8{ width:230px; height:280px; left:890px; top:-20px; }
-.b9{ width:210px; height:260px; left:1050px; top:0; }
+.b1 { width: 15%; height: 180%; left: -5%;  top: -10%; }
+.b2 { width: 18%; height: 220%; left: 5%;   top: -20%; }
+.b3 { width: 15%; height: 200%; left: 15%;  top: 0%;   }
+.b4 { width: 18%; height: 220%; left: 28%;  top: -15%; }
+.b5 { width: 15%; height: 200%; left: 42%;  top: 0%;   }
+.b6 { width: 18%; height: 220%; left: 55%;  top: -10%; }
+.b7 { width: 15%; height: 200%; left: 68%;  top: 0%;   }
+.b8 { width: 18%; height: 220%; left: 82%;  top: -20%; }
+.b9 { width: 18%; height: 220%; left: 92%;  top: 0%;   }
+
+
 /* HERO */
 
 .hero {
-    display: flex;
-    height: 700px;
-    margin: 17% 20% 8% 20%;
-    background: #ff6b6b;
-    width: 800px;
+    position: relative;
+    overflow: visible;
+    width: 600px;
+    height: 600px;
+    margin: 120px auto; 
+    border-radius: 50%;
     background: radial-gradient(circle, rgba(255, 204, 0, 0.8), rgba(255, 140, 0, 0.5)),
         url('./imagenes/fondo.jpg') center/cover no-repeat;
-    background-size: cover;
+    display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    border-radius: 80%;
 }
 
+/* TEXTO ENCIMA */
 .hero-texto {
+    position: relative;
+    z-index: 1;
     text-align: center;
+    color: white;
 }
 
-.btn {
+.btn{
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px 20px;
-    background: #a7ff6d;
-    color: black;
+    background: #6beeff;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
+/* --- SOL CON BRILLO EXTERNO --- */
+.sol-brillo-externo {
+    position: absolute;
+    width: 850px;
+    height: 850px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    /* ✅ SOLO BORDE ILUMINADO */
+    background: radial-gradient(circle,
+        rgba(255,255,0,0) 45%,
+        rgba(255,200,0,0.6) 65%,
+        rgba(255,150,0,0.4) 80%,
+        rgba(255,100,0,0) 100%
+    );
+
+    filter: blur(50px);
+    z-index: 0;
+}
 /* SERVICIOS */
 
 
@@ -182,7 +228,7 @@
 .columna-1, .columna-2 {
     padding: 20px;
     width: 220px;
-    margin: 0% 20%;
+    margin: 0% 0%;
     text-align: center;
     border-radius: 5px; /* Bordes menos redondeados para que parezca corte de madera */
     
@@ -215,28 +261,28 @@
             rgba(0,0,0,0.1) 0px,
             rgba(0,0,0,0.1) 2px,
             transparent 2px,
-            transparent 4px
+            transparent 40px
         ),
         #a0522d;
 }
-
-/* GALERÍA */
-.galeria {
-    padding: 50px;
-    text-align: center;
-
-      background:
+/*pasto*/
+.pasto {
+    background:
     linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
     url('./imagenes/pasto.png') center repeat;
     background-size: 120px;
     border-top: 10px solid #2f6f28;
     background-size: 120px;
-  background-blend-mode: overlay;
-  border:4px solid #2f6f28;
-  border-left:0;
+    background-blend-mode: overlay;
+    background-color: green;
+}
+/* GALERÍA */
+.galeria {
+    padding: 50px;
+    text-align: center;
+    border-left:0;
   border-right:0;
     text-align: center;
-    background-color: green;
 }
 
 .grid {
@@ -253,18 +299,9 @@
 .contacto{
   padding:50px;
   text-align:center;
-  position:relative;
-  overflow:hidden;
-  background:
-    linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
-    url('./imagenes/pasto.png') center repeat;
-  background-size: 120px;
-  background-blend-mode: overlay;
-  border:4px solid #2f6f28;
   border-left:0;
   border-right:0;
     text-align: center;
-    background-color: green;
 }
 
 .contenedor-contacto {
