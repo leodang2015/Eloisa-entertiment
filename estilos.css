@@ -342,27 +342,37 @@ body {
 .contenedor-contacto {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
+    gap: 100px;
+    margin-top: 50px;
+    font-size: 33px;
+
 }
+.info {
+    color: #ccf30b;
+
+}
+
 
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 300px;
+    width: 525px;
 }
 
 input,
 textarea {
-    padding: 10px;
+    padding: 34px;
+    font-size: 33px;
+  border: px solid darkblue;
+  
 }
 
 button {
     background: #ff6b6b;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 35px;
     cursor: pointer;
 }
 
