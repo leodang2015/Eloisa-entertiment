@@ -237,7 +237,7 @@ body {
 
     text-align: center;
 
-    color: white;
+    color: rgb(6, 82, 18);
 
 }
 .btn{
@@ -248,11 +248,13 @@ body {
 
     padding: 10px 20px;
 
-    background: #6beeff;
+    background: #6b81ff;
 
-    color: white;
+    color: rgb(63, 74, 97);
 
     text-decoration: none;
+
+    font-size: 20px;
 
     border-radius: 5px;
 
