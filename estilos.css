@@ -18,6 +18,19 @@ body {
 
 }
 
+.subtitulo {
+
+    font-size: 60px;
+
+    font-weight: bold;
+
+    color: #000000;
+
+    padding: 20px;
+
+    text-align: center;
+
+}
 
 
 /* Botones de navegación */
@@ -82,10 +95,6 @@ body {
 
 }
 
-
-
-
-
 .header a{
 
     padding: 10px 18px;
@@ -126,7 +135,7 @@ body {
 
     width: 180%;
 
-    height: 180px; /* Definimos una altura base para que el % de los bultos sepa cuánto medir */
+    height: 130px; /* Definimos una altura base para que el % de los bultos sepa cuánto medir */
 
     z-index: -1;
 
@@ -170,7 +179,7 @@ body {
 
 /* posiciones (forma de nube) */
 
-.b1 { width: 15%; height: 180%; left: -5%;  top: -10%; }
+.b1 { width: 15%; height: 220%; left: -5%;  top: -10%; }
 
 .b2 { width: 18%; height: 220%; left: 5%;   top: -20%; }
 
@@ -692,15 +701,11 @@ body {
 
 .info {
 
-    color: #ccf30b;
+    color: #ffffff;
 
 
 
 }
-
-
-
-
 
 form {
 
@@ -724,10 +729,7 @@ textarea {
 
     font-size: 33px;
 
-  border: px solid darkblue;
-
-  
-
+    border: 2px solid darkblue;
 }
 
 
@@ -739,6 +741,8 @@ button {
     color: white;
 
     border: none;
+
+    font-size: 30px;
 
     padding: 35px;
 
@@ -960,5 +964,44 @@ img {
         max-width: 350px;
 
     }
+
+    .grid img {
+
+    width: 100%;
+
+    height: 450px;
+
+}
+
+
+}
+
+@media (max-width: 956px) {
+
+    
+
+    form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: 325px;
+
+}
+
+
+
+    input,
+    textarea {
+
+    padding: 34px;
+
+    font-size: 33px;
+
+    border: 2px solid darkblue;
+}
 
 }
