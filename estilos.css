@@ -189,12 +189,7 @@ body {
 .b9 { width: 18%; height: 220%; left: 92%;  top: 0%;   }
 
 
-
-
-
 /* HERO */
-
-
 
 .hero {
 
@@ -223,7 +218,6 @@ body {
 }
 
 
-
 /* TEXTO ENCIMA */
 
 .hero-texto {
@@ -237,9 +231,6 @@ body {
     color: white;
 
 }
-
-
-
 .btn{
 
     display: inline-block;
@@ -258,19 +249,7 @@ body {
 
 }
 
-
-
-
-
 /* SERVICIOS */
-
-
-
-
-
-
-
-/* Efecto de brillo animado (el toque "vivo") */
 
 .servicios {
 
@@ -337,9 +316,6 @@ body {
     );
 
     transform: skewX(-25deg);
-
-    animation: madera-brillo 5s infinite;
-
 }
 
 
@@ -404,6 +380,23 @@ body {
 
 }
 
+.card img {
+
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    object-fit: contain;
+
+    object-fit:fill;
+
+}
 
 .card.activo {
 
@@ -443,8 +436,8 @@ body {
 
 .columna-1, .columna-2 {
 
-    padding: 20px;
-
+    padding: 50px;
+    
     width: 220px;
 
     margin: 0% 0%;
@@ -453,7 +446,7 @@ body {
 
     border-radius: 5px; /* Bordes menos redondeados para que parezca corte de madera */
 
-    
+    height: 350px;
 
     /* Degradado base: Café oscuro a café medio */
 
@@ -887,7 +880,7 @@ img {
 
     .columna {
 
-        flex-direction: column;
+        flex-direction: row;
 
         align-items: center;
 
@@ -895,8 +888,7 @@ img {
 
     .columna-1, .columna-2 {
 
-        width: 90%;
-
+        width: 20%;
     }
 
     .grid {
@@ -970,4 +962,3 @@ img {
     }
 
 }
-
