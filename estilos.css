@@ -533,13 +533,13 @@ body {
 
         repeating-linear-gradient(
 
-            0deg,
+            90deg,
 
-            rgba(0,0,0,0.1) 0px,
+            rgba(0,0,0,0.05) 0px,
 
-            rgba(0,0,0,0.1) 2px,
+            rgba(0,0,0,0.05) 1px,
 
-            transparent 2px,
+            transparent 1px,
 
             transparent 40px
 
@@ -1007,5 +1007,13 @@ img {
 
     border: 2px solid darkblue;
 }
+
+}
+
+@media (max-width: 680px) {
+
+    .card{
+        width:250px;
+    }
 
 }
