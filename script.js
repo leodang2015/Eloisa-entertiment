@@ -44,3 +44,15 @@ btnIzquierda.addEventListener("click", () => {
 
     mostrarCard(indice);
 });
+
+function aplicarModoNoche() {
+    const hora = new Date().getHours();
+    const esNoche = hora >= 15 || hora <= 6;
+    
+    document.body.classList.toggle("oscuro", esNoche);
+    const hero = document.querySelector(".hero");
+    if (hero) hero.classList.toggle("noche", esNoche);
+}
+
+aplicarModoNoche();
+});
