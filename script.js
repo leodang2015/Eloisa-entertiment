@@ -55,4 +55,3 @@ function aplicarModoNoche() {
 }
 
 aplicarModoNoche();
-});
