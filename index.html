@@ -18,10 +18,10 @@
     <img src="./imagenes/Fiesta de aventuras en logo-Photoroom.png" alt="Logo de Elo Aventuras" class="logo">
     
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio" id="inicio-link">Inicio</a></li>
+            <li><a href="#servicios" id="servicio-link">Servicios</a></li>
+            <li><a href="#galeria" id="galeria-link">Galería</a></li>
+            <li><a href="#contacto" id="contacto-link">Contacto</a></li>
         </ul>
     <!-- NUBE -->
     <div class="nube">
@@ -44,7 +44,8 @@
     <div class="hero-texto">
         <h1>Elo Aventuras</h1>
         <p>Experimenta aventuras inolvidables con nosotros</p>
-        <a href="#contacto" class="btn">Contáctanos</a>
+        <!-- Busca el botón en la sección Hero y cámbialo por este -->
+        <a href="https://wa.me/573103483287" class="btn" target="_blank">Escríbenos</a>
     </div>
 </section>
 
@@ -100,52 +101,81 @@
     </div>
 </section>
 <!-- CONTACTO -->
-<div class="pasto">
-<section id="contacto" class="contacto">
-    <h2 class="subtitulo">Contacto</h2>
-    <div class="contenedor-contacto">
+<div class="pasto-oscuro">
+    <section id="contacto" class="contacto">
+        <div class="contacto-header">
+            <span class="badge">¿LISTOS PARA JUGAR?</span>
+            <h2 class="subtitulo">PONTE EN CONTACTO</h2>
+            <p class="contacto-desc">Escríbenos y planeemos el evento o show de animación más divertido para tus pequeños.</p>
+        </div>
 
-        <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo" required>
-            <input type="tel" placeholder="Teléfono">
-            <textarea placeholder="Mensaje"></textarea>
-            <button>Enviar</button>
-        </form>
+        <div class="contenedor-contacto">
+            <!-- Lado Izquierdo: Formulario -->
+            <div class="contacto-card">
+                <h3 class="card-title">✉ Envíanos un mensaje</h3>
+                <form class="form-nuevo">
+                    <div class="campo">
+                        <label>NOMBRE COMPLETO *</label>
+                        <input type="text" placeholder="Tu nombre completo">
+                    </div>
+                    <div class="fila">
+                        <div class="campo">
+                            <label>CORREO ELECTRÓNICO *</label>
+                            <input type="email" placeholder="ejemplo@correo.com">
+                        </div>
+                        <div class="campo">
+                            <label>TELÉFONO / WHATSAPP</label>
+                            <input type="tel" placeholder="+57 300 000 0000">
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label>MENSAJE / DETALLES DE TU EVENTO</label>
+                        <textarea placeholder="¿Cuándo es tu evento? ¿Qué servicio te gusta?"></textarea>
+                    </div>
+                    <button class="btn-enviar-nuevo">Enviar Solicitud ✈</button>
+                </form>
+            </div>
 
-        <div class="info">
-
-    <p><strong>Tel:</strong> +57 310 3483287</p>
-
-    <p><strong>Email:</strong> info@eloaventuras.com</p>
-
-    <p><strong>Ciudad:</strong> Mogotes</p>
-
-    <p>
-        <strong>Dirección:</strong>
-        <a href="https://www.google.com/maps/place/Ecoparque+Monguatemon/"
-        target="_blank">
-        Ecoparque Monguatemon
-        </a>
-    </p>
-
-    <iframe 
-        src="https://www.google.com/maps?q=6.4763912,-72.9665465&hl=es&z=17&output=embed"
-        allowfullscreen=""
-        loading="lazy">
-    </iframe>
-
-</div>
-
-    </div>
-</section>
+            <!-- Lado Derecho: Info y Mapa -->
+            <div class="contacto-card info-derecha">
+                <div class="dato">
+                    <span class="icon-circulo">📞</span>
+                    <div>
+                        <small>LLÁMANOS O WHATSAPP</small>
+                        <p>+57 310 3483287</p>
+                    </div>
+                </div>
+                <div class="dato">
+                    <span class="icon-circulo">📧</span>
+                    <div>
+                        <small>CORREO ELECTRÓNICO</small>
+                        <p>info@eloaventuras.com</p>
+                    </div>
+                </div>
+                <div class="dato">
+                    <span class="icon-circulo">📍</span>
+                    <div>
+                        <small>CIUDAD Y SEDE</small>
+                        <p>Mogotes, Santander</p>
+                        <a href="#" style="color:#a7f3d0; font-size: 12px;">Ecoparque Monguatemon</a>
+                    </div>
+                </div>
+                <div class="mini-mapa">
+                    <iframe src="https://www.google.com/maps?q=6.4763912,-72.9665465&output=embed"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 <!-- FOOTER -->
 <footer>
     <p>© 2026 Elo Aventuras</p>
 </footer>
-
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/573103483287?text=Hola%20Elo%20Aventuras!%20Me%20gustaría%20recibir%20información%20sobre%20sus%20servicios." 
+   class="whatsapp-btn" 
+   target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 </body>
 </html>
-
-
