@@ -113,27 +113,36 @@
             <!-- Lado Izquierdo: Formulario -->
             <div class="contacto-card">
                 <h3 class="card-title">✉ Envíanos un mensaje</h3>
-                <form class="form-nuevo">
-                    <div class="campo">
-                        <label>NOMBRE COMPLETO *</label>
-                        <input type="text" placeholder="Tu nombre completo">
-                    </div>
-                    <div class="fila">
-                        <div class="campo">
-                            <label>CORREO ELECTRÓNICO *</label>
-                            <input type="email" placeholder="ejemplo@correo.com">
-                        </div>
-                        <div class="campo">
-                            <label>TELÉFONO / WHATSAPP</label>
-                            <input type="tel" placeholder="+57 300 000 0000">
-                        </div>
-                    </div>
-                    <div class="campo">
-                        <label>MENSAJE / DETALLES DE TU EVENTO</label>
-                        <textarea placeholder="¿Cuándo es tu evento? ¿Qué servicio te gusta?"></textarea>
-                    </div>
-                    <button class="btn-enviar-nuevo">Enviar Solicitud ✈</button>
-                </form>
+    <form action="https://formsubmit.co/eloaventurasclientes@gmail.com" method="POST">
+
+    <div class="campo">
+        <label>NOMBRE COMPLETO *</label>
+        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+    </div>
+
+        <div class="campo">
+            <label>CORREO ELECTRÓNICO *</label>
+            <input type="email" name="correo" placeholder="ejemplo@correo.com" required>
+        </div>
+
+        <div class="campo">
+            <label>TELÉFONO / WHATSAPP</label>
+            <input type="tel" name="telefono" placeholder="+57 300 000 0000">
+        </div>
+
+    <div class="campo">
+        <label>MENSAJE</label>
+        <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+    </div>
+
+    <button type="submit" class="btn-enviar-nuevo">
+        Enviar Solicitud ✈
+    </button>
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://tupagina.com/gracias.html">
+
+</form>
             </div>
 
             <!-- Lado Derecho: Info y Mapa -->
@@ -177,5 +186,8 @@
    target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
+<a id="cambiodedia">
+</a>
 </body>
 </html>
+
