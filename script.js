@@ -45,13 +45,30 @@ btnIzquierda.addEventListener("click", () => {
     mostrarCard(indice);
 });
 
+let esNoche = false;
+
+const boton = document.getElementById("cambiodedia");
+
+function actualizarModo() {
+    document.body.classList.toggle("oscuro", esNoche);
+
+    const hero = document.querySelector(".hero");
+    if (hero) {
+        hero.classList.toggle("noche", esNoche);
+    }
+
+    boton.textContent = esNoche ? "☀️" : "🌙";
+}
+
 function aplicarModoNoche() {
     const hora = new Date().getHours();
-    const esNoche = hora >= 15 || hora <= 6;
-    
-    document.body.classList.toggle("oscuro", esNoche);
-    const hero = document.querySelector(".hero");
-    if (hero) hero.classList.toggle("noche", esNoche);
+    esNoche = hora >= 15 || hora <= 6;
+    actualizarModo();
 }
 
 aplicarModoNoche();
+
+boton.addEventListener("click", () => {
+    esNoche = !esNoche;
+    actualizarModo();
+});
