@@ -1,3 +1,6 @@
+html{
+    scroll-behavior:smooth;
+}
 :root {
     /* --- VARIABLES ESPECIFICADAS POR EL USUARIO --- */
     --color-cielo: #7df9ff;
