@@ -94,17 +94,32 @@
 <section id="galeria" class="galeria">
     <h2 class="subtitulo">Galería</h2>
     <div class="grid">
-        <img src="./imagenes/WhatsApp Image 2026-04-22 at 10.49.46 AM.jpeg" alt="Galería 1" class="galeria1">
-        <img src="./imagenes/WhatsApp Image 2026-04-22 at 9.38.33 AM (5).jpeg" alt="Galería 2" class="galeria2">
-        <img src="./imagenes/WhatsApp Image 2026-04-22 at 9.56.42 AM.jpeg" alt="Galería 3" class="galeria3">
-        <img src="./imagenes/juegos ludicos.jpg" alt="Galería 4" class="galeria4">
+        <img src="./imagenes/WhatsApp Image 2026-04-22 at 10.49.46 AM.jpeg" alt="Galería 1" class="galeria1 galeria-img" data-titulo="🎉 Fiesta Infantil" data-desc="Animación completa para el cumpleaños más especial de tus pequeños. ¡Globos, música y mucha diversión garantizada!">
+        <img src="./imagenes/WhatsApp Image 2026-04-22 at 9.38.33 AM (5).jpeg" alt="Galería 2" class="galeria2 galeria-img" data-titulo="🤡 Show de Payasos" data-desc="Risas garantizadas con nuestros increíbles payasos. ¡Malabares, trucos y humor para toda la familia!">
+        <img src="./imagenes/WhatsApp Image 2026-04-22 at 9.56.42 AM.jpeg" alt="Galería 3" class="galeria3 galeria-img" data-titulo="🎯 Juegos de Bingo" data-desc="Concentración y emoción en nuestro bingo especial para niños. ¡Premios sorpresa para los ganadores!">
+        <img src="./imagenes/juegos ludicos.jpg" alt="Galería 4" class="galeria4 galeria-img" data-titulo="🎮 Juegos Lúdicos" data-desc="Creatividad y aprendizaje con nuestros juegos lúdicos. ¡Diversión que también enseña y fortalece la amistad!">
+        <img src="./imagenes/cumpleaños.jpg" alt="Galería 5" class="galeria5 galeria-img" data-titulo="🎂 Cumpleaños Especial" data-desc="¡Hacemos que cada cumpleaños sea único e inolvidable! Decoración, música y sorpresas para el festejado.">
     </div>
 </section>
+
+<!-- MODAL GALERÍA -->
+<div id="modal-galeria" class="modal-galeria">
+    <div class="modal-contenido">
+        <button class="modal-cerrar" aria-label="Cerrar">✕</button>
+        <img id="modal-imagen" src="" alt="">
+        <div class="modal-info">
+            <h3 id="modal-titulo"></h3>
+            <p id="modal-desc"></p>
+            <a href="https://wa.me/573103483287" class="modal-btn-wa" target="_blank">📲 ¡Reserva ahora!</a>
+        </div>
+    </div>
+</div>
+
 <!-- CONTACTO -->
 <div class="pasto-oscuro">
     <section id="contacto" class="contacto">
         <div class="contacto-header">
-            <span class="badge">¿LISTOS PARA JUGAR?</span>
+            <div class="badge-grande">🎉 ¿LISTOS PARA JUGAR? 🎉</div>
             <h2 class="subtitulo">PONTE EN CONTACTO</h2>
             <p class="contacto-desc">Escríbenos y planeemos el evento o show de animación más divertido para tus pequeños.</p>
         </div>
@@ -112,7 +127,7 @@
         <div class="contenedor-contacto">
             <!-- Lado Izquierdo: Formulario -->
             <div class="contacto-card">
-                <h3 class="card-title">✉ Envíanos un mensaje</h3>
+                <h3 class="card-title">✉️ Envíanos un mensaje</h3>
     <form action="https://formsubmit.co/eloaventurasclientes@gmail.com" method="POST">
 
     <div class="campo">
@@ -120,24 +135,22 @@
         <input type="text" name="nombre" placeholder="Tu nombre completo" required>
     </div>
 
-        <div class="campo">
-            <label>CORREO ELECTRÓNICO *</label>
-            <input type="email" name="correo" placeholder="ejemplo@correo.com" required>
-        </div>
+    <div class="campo">
+        <label>CORREO ELECTRÓNICO *</label>
+        <input type="email" name="correo" placeholder="ejemplo@correo.com" required>
+    </div>
 
-        <div class="campo">
-            <label>TELÉFONO / WHATSAPP</label>
-            <input type="tel" name="telefono" placeholder="+57 300 000 0000">
-        </div>
+    <div class="campo">
+        <label>TELÉFONO / WHATSAPP</label>
+        <input type="tel" name="telefono" placeholder="+57 300 000 0000">
+    </div>
 
     <div class="campo">
         <label>MENSAJE</label>
         <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
     </div>
 
-    <button type="submit" class="btn-enviar-nuevo">
-        Enviar Solicitud ✈
-    </button>
+    <button type="submit" class="btn-enviar-nuevo">Enviar ✈️</button>
 
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://tupagina.com/gracias.html">
