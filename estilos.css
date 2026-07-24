@@ -1235,25 +1235,32 @@ body.oscuro .header a {
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
     padding:20px;
-    border-left:0;
-    border-right:0;
-    text-align:center;
 }
 
 .grid img{
     width:100%;
-    height:350px;
-    object-fit:fill;
-    border-radius:10px;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    border-radius:12px;
     box-shadow:0 4px 8px var(--color-sombra);
-    transition:transform .3s ease;
+    transition:transform .3s ease, box-shadow .3s ease;
+    display:block;
 }
 
 .grid img:hover{
-    transform:scale(1.05);
+    transform:scale(1.04);
+    box-shadow:0 8px 22px rgba(0,0,0,0.3);
+}
+
+@media(max-width:900px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:520px){
+    .grid{grid-template-columns:1fr;}
 }
 
 .contacto{
@@ -1296,6 +1303,251 @@ button{
     font-size:30px;
     padding:35px;
     cursor:pointer;
+}
+
+/* ===========================
+   BADGE GRANDE ANIMADO
+=========================== */
+.badge-grande {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcb77, #4d96ff, #ff6b6b);
+    background-size: 300% 300%;
+    animation: arcoiris 3s ease infinite;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.25), 0 0 20px rgba(255,107,107,0.35);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+@keyframes arcoiris {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===========================
+   BOTONES TIPO SERVICIO (radio)
+   — botón a la DERECHA del campo —
+=========================== */
+.campo-con-boton {
+    display: flex;
+    flex-direction: row-reverse; /* campo izq, botón der */
+    gap: 10px;
+    align-items: stretch;
+    margin-bottom: 14px;
+}
+
+.campo-con-boton .campo {
+    flex: 1;
+    margin-bottom: 0;
+    min-width: 0;
+}
+
+.btn-radio-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 54px;
+}
+
+.btn-radio-wrap input[type="radio"] {
+    display: none;
+}
+
+.btn-servicio {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 6px !important;
+    border-radius: 12px !important;
+    border: 2px solid rgba(167, 243, 208, 0.5) !important;
+    color: #d1fae5 !important;
+    cursor: pointer !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+    line-height: 1 !important;
+    margin-bottom: 0 !important;
+    height: 100% !important;
+    min-height: 52px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.btn-servicio:hover {
+    background: rgba(167, 243, 208, 0.22) !important;
+    border-color: #a7f3d0 !important;
+    transform: scale(1.04) !important;
+}
+
+.btn-radio-wrap input[type="radio"]:checked + .btn-servicio {
+    background: #a7f3d0 !important;
+    color: #052b05 !important;
+    border-color: #6ee7b7 !important;
+    box-shadow: 0 4px 0 #1e8a55 !important;
+    transform: scale(0.97) !important;
+    font-weight: 900 !important;
+}
+
+/* ===========================
+   CONTACTO — inputs proporcionales
+=========================== */
+.contacto-card form {
+    width: 100% !important;
+}
+
+.contacto-card input,
+.contacto-card textarea {
+    padding: 11px 14px !important;
+    font-size: 14px !important;
+    border: 1px solid rgba(167, 243, 208, 0.35) !important;
+    border-radius: 10px !important;
+    background: rgba(0, 0, 0, 0.28) !important;
+    color: #ffffff !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.contacto-card input::placeholder,
+.contacto-card textarea::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.contacto-card textarea {
+    min-height: 90px !important;
+    resize: vertical !important;
+}
+
+/* Responsivo: botón debajo del campo en móvil */
+@media (max-width: 680px) {
+    .campo-con-boton {
+        flex-direction: column;
+    }
+    .btn-radio-wrap {
+        width: 100%;
+    }
+    .btn-servicio {
+        min-height: 44px !important;
+        height: auto !important;
+        width: 100% !important;
+    }
+    .contenedor-contacto {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .contacto-card {
+        padding: 20px !important;
+    }
+}
+
+/* ===========================
+   GALERÍA — cursor pointer
+=========================== */
+.galeria-img {
+    cursor: pointer;
+}
+
+/* ===========================
+   MODAL GALERÍA
+=========================== */
+.modal-galeria {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-galeria.activo {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-contenido {
+    background: linear-gradient(135deg, #082b08 0%, #0d3d0d 100%);
+    border-radius: 24px;
+    padding: 30px;
+    max-width: 560px;
+    width: 100%;
+    position: relative;
+    border: 2px solid rgba(167, 243, 208, 0.35);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+}
+
+.modal-contenido #modal-imagen {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 55vh !important;
+    object-fit: contain !important;
+    border-radius: 14px !important;
+    margin-bottom: 20px !important;
+    display: block !important;
+    background: rgba(0,0,0,0.3) !important;
+}
+
+.modal-info h3 {
+    color: #a7f3d0;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.modal-info p {
+    color: #d1fae5;
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.modal-btn-wa {
+    display: inline-block;
+    background: #25d366;
+    color: white !important;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 0 #1a9a4a;
+    transition: transform 0.15s ease;
+}
+
+.modal-btn-wa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #1a9a4a;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.12);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal-cerrar:hover {
+    background: rgba(255, 255, 255, 0.28);
 }
 
 /* ===========================
@@ -1439,12 +1691,11 @@ img{
     }
 
     .grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .grid img{
-        width:100%;
-        height:150px;
+        aspect-ratio:4/3;
     }
 
     .contenedor-contacto{
@@ -1481,10 +1732,6 @@ img{
         max-width:350px;
     }
 
-    .grid img{
-        width:100%;
-        height:450px;
-    }
 }
 
 @media (max-width:956px){
