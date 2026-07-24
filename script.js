@@ -72,3 +72,36 @@ boton.addEventListener("click", () => {
     esNoche = !esNoche;
     actualizarModo();
 });
+
+// ===========================
+// MODAL GALERÍA
+// ===========================
+const galeriaImgs = document.querySelectorAll(".galeria-img");
+const modalGaleria = document.getElementById("modal-galeria");
+const modalImagen = document.getElementById("modal-imagen");
+const modalTitulo = document.getElementById("modal-titulo");
+const modalDesc = document.getElementById("modal-desc");
+const modalCerrar = document.querySelector(".modal-cerrar");
+
+galeriaImgs.forEach(img => {
+    img.addEventListener("click", () => {
+        modalImagen.src = img.getAttribute('src');
+        modalImagen.alt = img.alt;
+        modalTitulo.textContent = img.dataset.titulo;
+        modalDesc.textContent = img.dataset.desc;
+        modalGaleria.classList.add("activo");
+        document.body.style.overflow = "hidden";
+    });
+});
+
+modalCerrar.addEventListener("click", () => {
+    modalGaleria.classList.remove("activo");
+    document.body.style.overflow = "";
+});
+
+modalGaleria.addEventListener("click", (e) => {
+    if (e.target === modalGaleria) {
+        modalGaleria.classList.remove("activo");
+        document.body.style.overflow = "";
+    }
+});
