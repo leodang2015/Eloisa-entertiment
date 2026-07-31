@@ -1,140 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8"> <!-- Define el uso de tildes y caracteres especiales -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la web sea responsiva (se adapte a móviles) -->
-    <title>Elo Aventuras | Animación Infantil</title>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elo Aventuras</title>
     
-    <!-- Icono que aparece en la pestaña del navegador -->
     <link rel="icon" href="./imagenes/Fiesta de aventuras en logo-Photoroom.png" type="image/png">
     
-    <!-- Enlace al archivo de estilos y al archivo de lógica -->
     <link rel="stylesheet" href="estilos.css">
-    <script src="script.js" defer></script> <!-- "defer" hace que el script cargue después de leer el HTML -->
+    
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- CABECERA: Contiene el logo y el menú de navegación superior -->
-    <header class="header">
-        <!-- Logo de la empresa -->
-        <img src="./imagenes/Fiesta de aventuras en logo-Photoroom.png" alt="Logo" class="logo">
-        
-        <!-- Navegación: Enlaces internos a las secciones (usando ID #) -->
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#inicio" id="inicio-link">Inicio</a></li>
-                <li><a href="#servicios" id="servicio-link">Servicios</a></li>
-                <li><a href="#galeria" id="galeria-link">Galería</a></li>
-                <li><a href="#contacto" id="contacto-link">Contacto</a></li>
-            </ul>
-        </nav>
+<div class="header">
+    <div class="mantenimiento">
+    <img src="./imagenes/Fiesta de aventuras en logo-Photoroom.png" alt="Logo de Elo Aventuras" class="logo">
+    
+        <ul>
+            <li><a href="#inicio" id="inicio-link">Inicio</a></li>
+            <li><a href="#servicios" id="servicio-link">Servicios</a></li>
+            <li><a href="#galeria" id="galeria-link">Galería</a></li>
+            <li><a href="#contacto" id="contacto-link">Contacto</a></li>
+        </ul>
+    <!-- NUBE -->
+    <div class="nube">
+        <div class="bulto b1"></div>
+        <div class="bulto b2"></div>
+        <div class="bulto b3"></div>
+        <div class="bulto b4"></div>
+        <div class="bulto b5"></div>
+        <div class="bulto b6"></div>
+        <div class="bulto b7"></div>
+        <div class="bulto b8"></div>
+        <div class="bulto b9"></div>
+    </div>
+</div>
+</div>
 
-        <!-- DECORACIÓN: Divs que se convertirán en bultos de nubes mediante CSS -->
-        <div class="nube-container">
-            <div class="bulto b1"></div><div class="bulto b2"></div>
-            <div class="bulto b3"></div><div class="bulto b4"></div>
-            <div class="bulto b5"></div><div class="bulto b6"></div>
+<!-- HERO -->
+<section id="inicio" class="hero">
+
+    <div class="hero-texto">
+        <h1>Elo Aventuras</h1>
+        <p>Experimenta aventuras inolvidables con nosotros</p>
+        <!-- Busca el botón en la sección Hero y cámbialo por este -->
+        <a href="https://wa.me/573103483287" class="btn" target="_blank">Escríbenos</a>
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+
+
+<section id="servicios" class="servicios">
+    <h2 class="subtitulo">Servicios</h2>
+    <div class="contenedor-servicios">
+        <div class="columna">
+    <div class="columna-1"></div>
+        <div class="card activo">
+            <img src="./imagenes/fiesta.jpg" alt="Fiestas Infantiles" class="imagenes">
+            <h3>Fiestas Infantiles</h3>
+            <p>Animación completa para cumpleaños.</p>
         </div>
-    </header>
-
-    <!-- HERO: Sección de bienvenida con forma circular y botón principal -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Elo Aventuras</h1>
-            <p>Diversión inolvidable para tus pequeños</p>
-            <!-- Enlace directo a WhatsApp -->
-            <a href="https://wa.me/573103483287" class="btn-main" target="_blank">Escríbenos</a>
+        <div class="card">
+            <img src="./imagenes/WhatsApp Image 2026-04-22 at 9.38.33 AM (5).jpeg" alt="Show de Payasos" class="imagenes">
+            <h3>Show de Payasos</h3>
+            <p>Risas garantizadas para todos.</p>
         </div>
-    </section>
+        <div class="card">
+            <img src="./imagenes/juegos ludicos.jpg" alt="Juegos Lúdicos 1" class="imagenes">
+            <h3>Juegos Lúdicos</h3>
+            <p>Creatividad y diversión.</p>
+        </div>
+        <div class="card">
+            <img src="./imagenes/WhatsApp Image 2026-04-22 at 9.56.42 AM.jpeg" alt="Juegos de bingo" class="imagenes">
+            <h3>Juegos de bingo</h3>
+            <p>Creatividad y concentracion.</p>
+        </div>
+        <div class="card">
+            <img src="./imagenes/juegos ludicos.jpg" alt="Juegos Lúdicos 2" class="imagenes">
+            <h3>Juegos Lúdicos</h3>
+            <p>Creatividad y diversión.</p>
+        </div>
+            <div class="columna-2"></div>
+            </div>
+    </div>
+</section>
 
-    <!-- SERVICIOS: Carrusel de tarjetas con diseño de madera -->
-    <section id="servicios" class="servicios-section">
-        <h2 class="subtitulo">Nuestros Servicios</h2>
-        <div class="carousel-container">
-            <!-- Flechas para mover las tarjetas (controladas por JS) -->
-            <button class="arrow-btn prev">◀</button>
-            
-            <div class="cards-wrapper">
-                <!-- La clase "activo" indica cuál tarjeta se muestra primero -->
-                <div class="card activo">
-                    <img src="./imagenes/fiesta.jpg" alt="Fiestas">
-                    <h3>Fiestas Infantiles</h3>
-                    <p>Animación completa con música y juegos.</p>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/WhatsApp Image 2026-04-22 at 9.38.33 AM (5).jpeg" alt="Payasos">
-                    <h3>Show de Payasos</h3>
-                    <p>Risas y humor para toda la familia.</p>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/juegos ludicos.jpg" alt="Lúdica">
-                    <h3>Juegos Lúdicos</h3>
-                    <p>Actividades que estimulan el aprendizaje.</p>
-                </div>
+
+<!-- PASTO -->
+
+<!-- GALERÍA -->
+<section id="galeria" class="galeria">
+    <h2 class="subtitulo">Galería</h2>
+    <div class="grid">
+        <img src="./imagenes/WhatsApp Image 2026-04-22 at 10.49.46 AM.jpeg" alt="Galería 1" class="galeria1 galeria-img" data-titulo="🎉 Fiesta Infantil" data-desc="Animación completa para el cumpleaños más especial de tus pequeños. ¡Globos, música y mucha diversión garantizada!">
+        <img src="./imagenes/WhatsApp Image 2026-04-22 at 9.38.33 AM (5).jpeg" alt="Galería 2" class="galeria2 galeria-img" data-titulo="🤡 Show de Payasos" data-desc="Risas garantizadas con nuestros increíbles payasos. ¡Malabares, trucos y humor para toda la familia!">
+        <img src="./imagenes/WhatsApp Image 2026-04-22 at 9.56.42 AM.jpeg" alt="Galería 3" class="galeria3 galeria-img" data-titulo="🎯 Juegos de Bingo" data-desc="Concentración y emoción en nuestro bingo especial para niños. ¡Premios sorpresa para los ganadores!">
+        <img src="./imagenes/juegos ludicos.jpg" alt="Galería 4" class="galeria4 galeria-img" data-titulo="🎮 Juegos Lúdicos" data-desc="Creatividad y aprendizaje con nuestros juegos lúdicos. ¡Diversión que también enseña y fortalece la amistad!">
+        <img src="./imagenes/cumpleaños.jpg" alt="Galería 5" class="galeria5 galeria-img" data-titulo="🎂 Cumpleaños Especial" data-desc="¡Hacemos que cada cumpleaños sea único e inolvidable! Decoración, música y sorpresas para el festejado.">
+    </div>
+</section>
+
+<!-- MODAL GALERÍA -->
+<div id="modal-galeria" class="modal-galeria">
+    <div class="modal-contenido">
+        <button class="modal-cerrar" aria-label="Cerrar">✕</button>
+        <img id="modal-imagen" src="" alt="">
+        <div class="modal-info">
+            <h3 id="modal-titulo"></h3>
+            <p id="modal-desc"></p>
+            <a href="https://wa.me/573103483287" class="modal-btn-wa" target="_blank">📲 ¡Reserva ahora!</a>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACTO -->
+<div class="pasto-oscuro">
+    <section id="contacto" class="contacto">
+        <div class="contacto-header">
+            <div class="badge-grande">🎉 ¿LISTOS PARA JUGAR? 🎉</div>
+            <h2 class="subtitulo">PONTE EN CONTACTO</h2>
+            <p class="contacto-desc">Escríbenos y planeemos el evento o show de animación más divertido para tus pequeños.</p>
+        </div>
+
+        <div class="contenedor-contacto">
+            <!-- Lado Izquierdo: Formulario -->
+            <div class="contacto-card">
+                <h3 class="card-title">✉ Envíanos un mensaje</h3>
+    <form action="https://formsubmit.co/eloaventurasclientes@gmail.com" method="POST">
+
+    <div class="campo">
+        <label>NOMBRE COMPLETO *</label>
+        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+    </div>
+
+    <div class="campo">
+        <label>CORREO ELECTRÓNICO *</label>
+        <input type="email" name="correo" placeholder="ejemplo@correo.com" required>
+    </div>
+
+    <div class="campo">
+        <label>TELÉFONO / WHATSAPP</label>
+        <input type="tel" name="telefono" placeholder="+57 300 000 0000">
+    </div>
+
+    <div class="campo">
+        <label>MENSAJE</label>
+        <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+    </div>
+
+    <button type="submit" class="btn-enviar-nuevo">Enviar ✈</button>
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://tupagina.com/gracias.html">
+
+</form>
             </div>
 
-            <button class="arrow-btn next">▶</button>
-        </div>
-    </section>
-
-    <!-- GALERÍA: Imágenes que al hacer clic abren un Modal -->
-    <section id="galeria" class="galeria-section">
-        <h2 class="subtitulo">Galería de Risas</h2>
-        <div class="gallery-grid">
-            <!-- data-titulo y data-desc guardan texto que el JS leerá al hacer clic -->
-            <img src="./imagenes/cumpleaños.jpg" class="gal-img" data-titulo="Cumpleaños" data-desc="Un día lleno de pasteles y alegría.">
-            <img src="./imagenes/fiesta.jpg" class="gal-img" data-titulo="Fiestas Pro" data-desc="Decoración y animación de alto nivel.">
-        </div>
-    </section>
-
-    <!-- CONTACTO: Formulario y Mapa de Google -->
-    <section id="contacto" class="contacto-section">
-        <div class="contacto-container">
-            <!-- Lado izquierdo: Formulario -->
-            <div class="form-card">
-                <span class="badge-promo">🎉 ¡PLANEA TU EVENTO!</span>
-                <h3>Envíanos un mensaje</h3>
-                <form action="https://formsubmit.co/eloaventurasclientes@gmail.com" method="POST">
-                    <input type="text" name="name" placeholder="Tu Nombre" required>
-                    <input type="email" name="email" placeholder="Correo electrónico" required>
-                    <textarea name="message" placeholder="¿Cómo podemos ayudarte?" required></textarea>
-                    <button type="submit" class="btn-submit">Enviar Mensaje 🚀</button>
-                </form>
-            </div>
-
-            <!-- Lado derecho: Datos de ubicación e Mapa -->
-            <div class="info-card">
-                <h3>Ubicación</h3>
-                <p>📍 Mogotes, Santander</p>
-                <p>📞 +57 310 3483287</p>
-                <div class="map-box">
+            <!-- Lado Derecho: Info y Mapa -->
+            <div class="contacto-card info-derecha">
+                <div class="dato">
+                    <span class="icon-circulo">📞</span>
+                    <div>
+                        <small>LLÁMANOS O WHATSAPP</small>
+                        <p>+57 310 3483287</p>
+                    </div>
+                </div>
+                <div class="dato">
+                    <span class="icon-circulo">📧</span>
+                    <div>
+                        <small>CORREO ELECTRÓNICO</small>
+                        <p>info@eloaventuras.com</p>
+                    </div>
+                </div>
+                <div class="dato">
+                    <span class="icon-circulo">📍</span>
+                    <div>
+                        <small>CIUDAD Y SEDE</small>
+                        <p>Mogotes, Santander</p>
+                        <a href="#" style="color:#a7f3d0; font-size: 12px;">Ecoparque Monguatemon</a>
+                    </div>
+                </div>
+                <div class="mini-mapa">
                     <iframe src="https://www.google.com/maps?q=6.4763912,-72.9665465&output=embed"></iframe>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- CONTROLES FLOTANTES: Cambio de modo y WhatsApp -->
-    <div class="floating-controls">
-        <button id="theme-toggle" class="float-btn">☀️</button>
-        <a href="https://wa.me/573103483287" class="float-btn whatsapp" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
-        </a>
-    </div>
-
-    <!-- MODAL: Ventana emergente que aparece al pulsar una imagen de la galería -->
-    <div id="modal-galeria" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span> <!-- Botón X para cerrar -->
-            <img id="modal-img" src="" alt="Ampliada">
-            <h3 id="modal-title"></h3>
-            <p id="modal-text"></p>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Elo Aventuras - Mogotes, Santander</p>
-    </footer>
-
+</div>
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Elo Aventuras</p>
+</footer>
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/573103483287?text=Hola%20Elo%20Aventuras!%20Me%20gustaría%20recibir%20información%20sobre%20sus%20servicios." 
+   class="whatsapp-btn" 
+   target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+<a id="cambiodedia">
+</a>
 </body>
 </html>
