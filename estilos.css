@@ -1,90 +1,1760 @@
-/* VARIABLES: Guardamos los colores aquí para no repetirlos y cambiarlos fácil */
+html{
+    scroll-behavior:smooth;
+}
 :root {
-    --primary-sky: #7df9ff;   /* Azul cielo */
-    --grass-green: #a7f3d0;   /* Verde pasto */
-    --wood-light: #a0522d;    /* Madera clara */
-    --wood-dark: #5d2e2e;     /* Madera oscura */
-    --text-dark: #1a1a1a;     /* Texto casi negro */
-    --white: #ffffff;
-    --night-blue: #0a063d;    /* Azul para modo noche */
-    --transition: all 0.4s ease; /* Velocidad de animaciones */
+    /* --- VARIABLES ESPECIFICADAS POR EL USUARIO --- */
+    --color-cielo: #7df9ff;
+    --color-cielo-claro: #ffffff;
+    --color-cielo-oscuro: inset 0 -10px 20px rgba(125, 249, 255, 0.2), 0 8px 16px rgba(0, 0, 0, 0.05);
+    --color-verde-claro: #a7f3d0;
+    --color-oscuro: #0a063d;
+     /* Colores del hero de noche */
+    --color-luna-centro: rgba(255,255,210,.9);
+    --color-luna-brillo: rgba(255,255,210,.7);
+    --color-luna-resplandor: rgba(255,255,255,.2);
+    --color-cielo-noche: rgba(5,20,60,.55);
+    --color-cielo-profundo: rgba(0,0,30,.8);
+    --color-texto-noche: #ffffff;
+    /* Botones de header */
+    --color-btn-inicio: #7df9ff;
+    --color-btn-inicio-shadow: #00c2c7;
+    --color-btn-servicios: #ffcb5c;
+    --color-btn-servicios-shadow: #d19515;
+    --color-btn-galeria: #ff867c;
+    --color-btn-galeria-shadow: #c74e44;
+    --color-btn-contacto: #a7f3d0;
+    --color-btn-contacto-shadow: #1e8a55;
+    --color-boton-noche: #d9d9d9;
+    --color-boton-noche-hover: #bfbfbf;
+    --color-texto-boton-noche: #0a063d;
+    --color-borde-boton-noche: #ffffff;
+    --color-texto: #000000;
+    --color-texto-claro: #ffffff;
+    --color-texto-verde: rgb(6, 82, 18);
+    --color-texto-boton: rgb(63, 74, 97);
+
+    --color-boton: #6b81ff;
+    --color-boton-contacto: #ff6b6b;
+    --color-sombra-boton: #00c2c7;
+
+    --color-madera-clara: #a0522d;
+    --color-madera: #8b4513;
+    --color-madera-oscura: #5d2e2e;
+    --color-borde-madera: #3e1f1f;
+    --color-crema: #f1d2b5;
+    --color-beige: #F5F5DC;
+
+    --color-card: #f5f5f5;
+    --color-sombra: rgba(0,0,0,0.1);
+
+    --color-sol: rgba(255,204,0,0.8);
+    --color-atardecer: rgba(255,140,0,0.5);
+    --color-luna: rgba(255,255,255,0.8);
+
+    --color-pasto: green;
+    --color-borde-pasto: #2f6f28;
+
+    --color-borde-input: darkblue;
+
+    --color-footer: #333;
+    --blanco: #ffffff;
+    --negro: #000000;
+
+    --bg-gradient: linear-gradient(to bottom, var(--color-cielo), #e0f7fa 40%, var(--color-verde-claro) 100%);
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-brand: #42210b; /* Café oscuro de madera */
+    --cloud-bg: var(--blanco);
+    --cloud-shadow: var(--color-cielo-oscuro);
+    
+    --hero-portal-bg: radial-gradient(circle, rgba(255, 235, 150, 0.9), rgba(125, 249, 255, 0.7));
+    --hero-title-color: #42210b;
+    --hero-desc-color: #4d2912;
+    --card-bg: var(--blanco);
+    --card-text: #1e293b;
+    --card-border: var(--color-beige);
+    
+    /* Colores principales */
+    --color-cielo: #7df9ff;
+    --color-cielo-claro: #ffffff;
+    --color-cielo-oscuro: inset 0 -10px 20px rgba(125, 249, 255, 0.2), 0 8px 16px rgba(0, 0, 0, 0.05);
+    --color-verde-claro: #a7f3d0;
+    --color-oscuro: #0a063d;
+     /* Colores del hero de noche */
+    --color-luna-centro: rgba(255,255,210,.9);
+    --color-luna-brillo: rgba(255,255,210,.7);
+    --color-luna-resplandor: rgba(255,255,255,.2);
+    --color-cielo-noche: rgba(5,20,60,.55);
+    --color-cielo-profundo: rgba(0,0,30,.8);
+    --color-texto-noche: #ffffff;
+    /* Botones de header */
+    --color-btn-inicio: #7df9ff;
+    --color-btn-inicio-shadow: #00c2c7;
+    --color-btn-servicios: #ffcb5c;
+    --color-btn-servicios-shadow: #d19515;
+    --color-btn-galeria: #ff867c;
+    --color-btn-galeria-shadow: #c74e44;
+    --color-btn-contacto: #a7f3d0;
+    --color-btn-contacto-shadow: #1e8a55;
+    --color-boton-noche: #d9d9d9;
+    --color-boton-noche-hover: #bfbfbf;
+    --color-texto-boton-noche: #0a063d;
+    --color-borde-boton-noche: #ffffff;
+    /* Texto */
+    --color-texto: #000000;
+    --color-texto-claro: #ffffff;
+    --color-texto-verde: rgb(6, 82, 18);
+    --color-texto-boton: rgb(63, 74, 97);
+
+    /* Botones */
+    --color-boton: #6b81ff;
+    --color-boton-contacto: #ff6b6b;
+    --color-sombra-boton: #00c2c7;
+
+    /* Madera */
+    --color-madera-clara: #a0522d;
+    --color-madera: #8b4513;
+    --color-madera-oscura: #5d2e2e;
+    --color-borde-madera: #3e1f1f;
+    --color-crema: #f1d2b5;
+    --color-beige: #F5F5DC;
+
+    /* Tarjetas */
+    --color-card: #f5f5f5;
+    --color-sombra: rgba(0,0,0,0.1);
+
+    /* Hero */
+    --color-sol: rgba(255,204,0,0.8);
+    --color-atardecer: rgba(255,140,0,0.5);
+    --color-luna: rgba(255,255,255,0.8);
+
+    /* Pasto */
+    --color-pasto: green;
+    --color-borde-pasto: #2f6f28;
+
+    /* Formularios */
+    --color-borde-input: darkblue;
+
+    /* Footer */
+    --color-footer: #333;
+
+    /* Blanco y negro */
+    --blanco: #ffffff;
+    --negro: #000000;
+
+
+    /* --- ASIGNACIÓN DE VARIABLES DINÁMICAS (MODO DÍA POR DEFECTO) --- */
+    --bg-gradient: linear-gradient(to bottom, var(--color-cielo), #e0f7fa 40%, var(--color-verde-claro) 100%);
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-brand: #42210b; /* Café oscuro de madera */
+    --cloud-bg: var(--blanco);
+    --cloud-shadow: var(--color-cielo-oscuro);
+    
+    --hero-portal-bg: radial-gradient(circle, rgba(255, 235, 150, 0.9), rgba(125, 249, 255, 0.7));
+    --hero-title-color: #42210b;
+    --hero-desc-color: #4d2912;
+    --card-bg: var(--blanco);
+    --card-text: #1e293b;
+    --card-border: var(--color-beige);
 }
 
-/* RESET: Quitamos margenes por defecto y usamos Arial */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-
-/* BODY: Fondo con degradado que simula el cielo bajando al suelo */
-body {
-    background: linear-gradient(to bottom, var(--primary-sky), var(--white) 50%, var(--grass-green));
-    scroll-behavior: smooth; /* Hace que el scroll al navegar sea suave */
-    transition: var(--transition);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
 }
 
-/* MODO OSCURO: Estos estilos se activan cuando JS le pone la clase "oscuro" al body */
+body{
+    background:linear-gradient(
+        to bottom,
+        var(--color-cielo),
+        var(--color-cielo-claro) 40%,
+        var(--color-verde-claro) 100%
+    );
+    overflow-x:hidden;
+}
+
 body.oscuro {
-    background: linear-gradient(to bottom, var(--night-blue), #1c2541 100%);
-    color: var(--white);
+    /* Redefinimos el gradiente de fondo para la noche */
+    --bg-gradient: linear-gradient(
+        to bottom, 
+        var(--color-oscuro), 
+        #0b132b 50%, 
+        #1c2541 100%
+    );
+    
+    /* Cambiamos los textos a colores claros */
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-brand: var(--blanco);
+    
+    /* Sombras y fondos de nubes en modo oscuro */
+    --cloud-bg: #111827;
+    --cloud-shadow: inset 0 -12px 24px rgba(99, 102, 241, 0.15), 0 10px 25px rgba(0, 0, 0, 0.3);
+    
+    /* Colores oscuros para los botones del header */
+    --color-btn-inicio: #1e293b;
+    --color-btn-inicio-shadow: #0f172a;
+    --color-btn-servicios: #312e81;
+    --color-btn-servicios-shadow: #1e1b4b;
+    --color-btn-galeria: #4c1d95;
+    --color-btn-galeria-shadow: #2e1065;
+    --color-btn-contacto: #064e3b;
+    --color-btn-contacto-shadow: #022c22;
+    
+    /* Portal del Hero y Tarjetas */
+    --hero-portal-bg: radial-gradient(circle, rgba(17, 24, 39, 0.95), rgba(10, 6, 61, 0.85));
+    --hero-title-color: var(--blanco);
+    --hero-desc-color: #cbd5e1;
+    --card-bg: #1c2541;
+    --card-text: #f1f5f9;
+    --card-border: #3a4766;
+    /* MADERA MÁS OSCURA */
+    --color-madera-clara: #4a2511; /* Caoba oscuro */
+    --color-madera: #2d160a;       /* Café casi negro */
+    --color-madera-oscura: #1a0d06; 
+    --color-borde-madera: #000000;
+}
+body.oscuro .header a {
+    color: var(--blanco) !important;
 }
 
-/* HEADER Y MENÚ */
-.header { position: relative; padding: 20px; z-index: 100; }
-.logo { width: 100px; position: fixed; top: 10px; left: 20px; z-index: 1000; }
-
-.nav-links {
-    position: fixed; top: 20px; right: 20px;
-    display: flex; gap: 15px; list-style: none; z-index: 1000;
+body.oscuro .bulto {
+    background: #1a1c2c; /* Azul grisáceo muy oscuro */
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.5);
 }
 
-.nav-links a {
-    padding: 10px 20px; border-radius: 30px;
-    text-decoration: none; color: var(--text-dark); font-weight: bold;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.1); /* Sombra estilo botón 3D */
+/* TEXTO DE BOTONES EN BLANCO (Lo que pediste antes) */
+body.oscuro .header a {
+    color: white !important;
 }
 
-/* HERO: El portal circular central */
-.hero {
-    height: 500px; width: 500px;
-    margin: 100px auto; border-radius: 50%; /* Lo hace redondo */
-    background: radial-gradient(circle, #ffcc00, #ff8c00), url('./imagenes/fondo.jpg');
-    background-blend-mode: overlay; background-size: cover;
-    display: flex; align-items: center; justify-content: center;
-    border: 10px solid var(--white);
-    transition: var(--transition);
+/* Opcional: Si quieres que el borde de abajo (sombra) también se vea mejor en noche */
+body.oscuro .header a {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Le da un toque de relieve al texto blanco */
+}
+#inicio-link{
+    background: var(--color-btn-inicio);
+    box-shadow: 0 5px 0 var(--color-btn-inicio-shadow);
 }
 
-/* Cambio visual del Hero en modo noche */
+#servicio-link{
+    background: var(--color-btn-servicios);
+    box-shadow: 0 5px 0 var(--color-btn-servicios-shadow);
+}
+
+#galeria-link{
+    background: var(--color-btn-galeria);
+    box-shadow: 0 5px 0 var(--color-btn-galeria-shadow);
+}
+
+#contacto-link{
+    background: var(--color-btn-contacto);
+    box-shadow: 0 5px 0 var(--color-btn-contacto-shadow);
+}
+
+.oscuro{
+    background:var(--color-oscuro);
+}
+
+.subtitulo{
+    display:inline-block;
+    padding:12px 35px;
+    background:linear-gradient(
+        to bottom,
+        var(--color-madera-clara),
+        var(--color-madera)
+    );
+    color:var(--color-crema);
+    border:4px solid var(--color-borde-madera);
+    border-radius:15px;
+    font-size:55px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    box-shadow:0 8px 15px rgba(0,0,0,.35);
+}
+
+#inicio{
+    scroll-margin-top:120px;
+    padding: 10px 20px;
+
+}
+
+#servicios{
+    scroll-margin-top:220px;
+    padding: 10px 20px;
+}
+
+#galeria{
+    scroll-margin-top:220px;
+    padding: 10px 20px;
+}
+
+#contacto{
+    scroll-margin-top:120px;
+    padding: 10px 20px;
+}
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px;
+    position:relative;
+    z-index:10;
+    overflow:visible;
+}
+
+.header ul{
+    position:fixed;
+    top:50px;
+    right:40px;
+    display:flex;
+    gap:20px;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.header a{
+    padding:10px 18px;
+    background:var(--color-cielo);
+    border-radius:20px;
+    text-decoration:none;
+    color:var(--negro);
+    box-shadow:0 5px 0 var(--color-sombra-boton);
+    white-space:nowrap;
+}
+
+.logo{
+    width:120px;
+    height:120px;
+    position:fixed;
+}
+
+
+
+.nube{
+    position:fixed;
+    top:-15%;
+    width:180%;
+    height:160px;
+    z-index:-1;
+    pointer-events:none;
+    display: flex;
+    transition:all 1s ease
+}
+
+/* Base de bultos */
+
+.bulto{
+    position:absolute;
+    background:var(--blanco);
+    border-radius:50%;
+}
+
+/* Posiciones */
+
+.b1{width:15%;height:220%;left:-5%;top:-10%;}
+.b2{width:18%;height:220%;left:5%;top:-20%;}
+.b3{width:15%;height:200%;left:15%;top:0%;}
+.b4{width:18%;height:220%;left:28%;top:-15%;}
+.b5{width:15%;height:200%;left:42%;top:0%;}
+.b6{width:18%;height:220%;left:55%;top:-10%;}
+.b7{width:15%;height:200%;left:68%;top:0%;}
+.b8{width:18%;height:220%;left:82%;top:-20%;}
+.b9{width:18%;height:220%;left:92%;top:0%;}
+
+.hero{
+    position:relative;
+    overflow:visible;
+    width:600px;
+    height:600px;
+    margin:120px auto;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            var(--color-sol),
+            var(--color-atardecer)
+        ),
+        url('./imagenes/fondo.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:100px 0px 0px 0px;
+}
+.hero.noche {
+    background: 
+        /* Este degradado crea el color "Luna" brillante */
+        radial-gradient(
+            circle, 
+            rgba(255, 255, 250, 0.9) 0%,   /* Centro color Luna (blanco roto) */
+            rgba(240, 240, 240, 0.7) 40%,  /* Blanco perlado */
+            rgba(10, 6, 61, 0.6) 100%      /* Se funde con el azul oscuro al borde */
+        ),
+        url("./imagenes/fondo.jpg") center/cover no-repeat;
+    
+    border: 5px solid rgba(255, 255, 255, 0.3); /* Un borde sutil de luz */
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.2); /* Resplandor hacia afuera */
+    color: #000; /* Cambiamos el texto a oscuro para que se lea sobre el blanco */
+}
+
+.hero.noche .hero-texto h1,
+.hero.noche .hero-texto p {
+    color: #0a063d; /* Azul muy oscuro para contraste */
+    text-shadow: none; /* Quitamos sombras claras */
+}
+
+.hero.noche .btn {
+    background: #0a063d;
+    color: white;
+}
+
+.noche{
+    position:relative;
+    overflow:visible;
+    width:600px;
+    height:600px;
+    margin:120px auto;
+    color:var(--blanco);
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            var(--color-luna),
+            var(--color-atardecer)
+        ),
+        url('./imagenes/fondo.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-texto{
+    position:relative;
+    font-size:25px;
+    z-index:1;
+    text-align:center;
+    color:var(--color-texto-verde);
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:var(--color-boton);
+    color:var(--color-texto-boton);
+    text-decoration:none;
+    font-size:20px;
+    border-radius:5px;
+}
+
+.servicios{
+    text-align:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.1) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            var(--color-madera) 2px,
+            transparent 2px
+        ),
+        linear-gradient(
+            90deg,
+            var(--color-madera-clara),
+            var(--color-madera)
+        );
+
+    background-size:100px 100%,100% 4px,100% 100%;
+
+    padding:2%;
+    position:relative;
+}
+
+.servicios::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,.1),
+        transparent
+    );
+    transform:skewX(-25deg);
+}
+
+@keyframes madera-brillo{
+    0%{left:-100%;}
+    20%{left:150%;}
+    100%{left:150%;}
+}
+
+.servicios:hover{
+    transition:transform .3s ease;
+    filter:brightness(1.1);
+}
+
+.contenedor-servicios{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:350px;
+    gap:20px;
+    margin-top:20px;
+    overflow:hidden;
+}
+
+.card{
+    background:var(--color-card);
+    padding:20px;
+    border-radius:10px;
+    width:350px;
+    height:350px;
+    border:3px solid var(--color-beige);
+    box-shadow:0 4px 8px var(--color-sombra);
+    display:none;
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:fill;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.card.activo{
+    display:block;
+    animation:fadeIn .4s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.columna{
+    margin:60px 0;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+}
+
+.columna-1,
+.columna-2{
+    padding:50px;
+    width:220px;
+    text-align:center;
+    border-radius:5px;
+    height:350px;    
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:linear-gradient(
+        to bottom,
+        var(--color-cielo),
+        var(--color-cielo-claro) 40%,
+        var(--color-verde-claro) 100%
+    );
+    overflow-x:hidden;
+}
+
+body.oscuro {
+    background: linear-gradient(to bottom, #0a063d, #0b132b 50%, #1c2541 100%);
+    color: #f8fafc;
+}
+
+body.oscuro .bulto {
+    background: #1a1c2c; /* Gris azulado profundo */
+    box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
 body.oscuro .hero {
-    background: radial-gradient(circle, #f5f5f5, #0a063d);
-    border-color: #1c2541;
+    background: radial-gradient(circle, rgba(255, 255, 250, 0.95), rgba(240, 240, 240, 0.8)), 
+                url('./imagenes/fondo.jpg') center/cover no-repeat;
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-/* SERVICIOS: Fondo que simula tablones de madera */
-.servicios-section {
-    padding: 60px 20px; text-align: center;
-    background: linear-gradient(90deg, var(--wood-light), var(--wood-dark));
-    color: #f1d2b5;
+body.oscuro .hero-texto h1 {
+    color: #0a063d; /* Color oscuro para que se vea sobre el blanco */
 }
 
-/* CARDS: Las tarjetas del carrusel */
-.card {
-    display: none; /* Se ocultan todas por defecto */
-    background: var(--white); color: var(--text-dark);
-    padding: 20px; border-radius: 20px; width: 300px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+body.oscuro .hero-texto p {
+    color: #1e293b;
 }
 
-.card.activo { display: block; } /* Solo se muestra la que tenga la clase activo */
-
-/* CONTACTO: Grid para dividir en dos columnas */
-.contacto-container {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Se pone uno debajo de otro en móviles */
-    gap: 30px; padding: 50px;
+body.oscuro .hero-texto .btn {
+    background: #0a063d;
+    color: #ffffff;
 }
 
-/* MODAL: Fondo negro transparente que cubre toda la pantalla */
-.modal {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.9); z-index: 10000;
-    align-items: center; justify-content: center;
+body.oscuro .header a {
+    color: #ffffff !important;
+}
+
+body.oscuro #inicio-link { background: #1e293b; box-shadow: 0 5px 0 #0f172a; }
+body.oscuro #servicio-link { background: #312e81; box-shadow: 0 5px 0 #1e1b4b; }
+body.oscuro #galeria-link { background: #4c1d95; box-shadow: 0 5px 0 #2e1065; }
+body.oscuro #contacto-link { background: #064e3b; box-shadow: 0 5px 0 #022c22; }
+
+body.oscuro .subtitulo, 
+body.oscuro .columna-1, 
+body.oscuro .columna-2 {
+    background: linear-gradient(to bottom, #4a2511, #2d160a);
+    border-color: #000000;
+    color: #f1d2b5; /* Letras color crema */
+}
+
+body.oscuro .servicios {
+    background: linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px),
+                linear-gradient(#1a0d06 2px, transparent 2px),
+                linear-gradient(90deg, #4a2511, #2d160a);
+    background-size: 100px 100%, 100% 4px, 100% 100%;
+}
+
+body.oscuro .card {
+    background: #1c2541;
+    border-color: #3a4766;
+    color: #f1f5f9;
+}
+
+body.oscuro .pasto-oscuro {
+    background: #051a05;
+    border-top-color: #000000;
+}
+
+body.oscuro .contacto-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.oscuro .header a {
+    color: var(--blanco) !important;
+}
+
+body.oscuro .bulto {
+    background: #1a1c2c; /* Azul grisáceo muy oscuro */
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.5);
+}
+
+/* TEXTO DE BOTONES EN BLANCO (Lo que pediste antes) */
+body.oscuro .header a {
+    color: white !important;
+}
+
+body.oscuro .header a {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Le da un toque de relieve al texto blanco */
+}
+#inicio-link{
+    background: var(--color-btn-inicio);
+    box-shadow: 0 5px 0 var(--color-btn-inicio-shadow);
+}
+
+#servicio-link{
+    background: var(--color-btn-servicios);
+    box-shadow: 0 5px 0 var(--color-btn-servicios-shadow);
+}
+
+#galeria-link{
+    background: var(--color-btn-galeria);
+    box-shadow: 0 5px 0 var(--color-btn-galeria-shadow);
+}
+
+#contacto-link{
+    background: var(--color-btn-contacto);
+    box-shadow: 0 5px 0 var(--color-btn-contacto-shadow);
+}
+
+.oscuro{
+    background:var(--color-oscuro);
+}
+
+.subtitulo{
+    display:inline-block;
+    padding:12px 35px;
+    background:linear-gradient(
+        to bottom,
+        var(--color-madera-clara),
+        var(--color-madera)
+    );
+    color:var(--color-crema);
+    border:4px solid var(--color-borde-madera);
+    border-radius:15px;
+    font-size:55px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    box-shadow:0 8px 15px rgba(0,0,0,.35);
+}
+
+
+#inicio{
+    scroll-margin-top:120px;
+    padding: 10px 20px;
+
+}
+
+#servicios{
+    scroll-margin-top:220px;
+    padding: 10px 20px;
+}
+
+#galeria{
+    scroll-margin-top:220px;
+    padding: 10px 20px;
+}
+
+#contacto{
+    scroll-margin-top:120px;
+    padding: 10px 20px;
+}
+
+
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px;
+    position:relative;
+    z-index:10;
+    overflow:visible;
+}
+
+/* Menú */
+
+.header ul{
+    position:fixed;
+    top:50px;
+    right:40px;
+    display:flex;
+    gap:20px;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.header a{
+    padding:10px 18px;
+    background:var(--color-cielo);
+    border-radius:20px;
+    text-decoration:none;
+    color:var(--negro);
+    box-shadow:0 5px 0 var(--color-sombra-boton);
+    white-space:nowrap;
+}
+
+.logo{
+    width:120px;
+    height:120px;
+    position:fixed;
+}
+
+.nube{
+    position:fixed;
+    top:-15%;
+    width:180%;
+    height:160px;
+    z-index:-1;
+    pointer-events:none;
+    display: flex;
+    transition:all 1s ease
+}
+
+/* Base de bultos */
+
+.bulto{
+    position:absolute;
+    background:var(--blanco);
+    border-radius:50%;
+}
+
+/* Posiciones */
+
+.b1{width:15%;height:220%;left:-5%;top:-10%;}
+.b2{width:18%;height:220%;left:5%;top:-20%;}
+.b3{width:15%;height:200%;left:15%;top:0%;}
+.b4{width:18%;height:220%;left:28%;top:-15%;}
+.b5{width:15%;height:200%;left:42%;top:0%;}
+.b6{width:18%;height:220%;left:55%;top:-10%;}
+.b7{width:15%;height:200%;left:68%;top:0%;}
+.b8{width:18%;height:220%;left:82%;top:-20%;}
+.b9{width:18%;height:220%;left:92%;top:0%;}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    position:relative;
+    overflow:visible;
+    width:600px;
+    height:600px;
+    margin:120px auto;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            var(--color-sol),
+            var(--color-atardecer)
+        ),
+        url('./imagenes/fondo.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:100px 0px 0px 0px;
+}
+.hero.noche {
+    background: 
+        /* Este degradado crea el color "Luna" brillante */
+        radial-gradient(
+            circle, 
+            rgba(255, 255, 250, 0.9) 0%,   /* Centro color Luna (blanco roto) */
+            rgba(240, 240, 240, 0.7) 40%,  /* Blanco perlado */
+            rgba(10, 6, 61, 0.6) 100%      /* Se funde con el azul oscuro al borde */
+        ),
+        url("./imagenes/fondo.jpg") center/cover no-repeat;
+    
+    border: 5px solid rgba(255, 255, 255, 0.3); /* Un borde sutil de luz */
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.2); /* Resplandor hacia afuera */
+    color: #000; /* Cambiamos el texto a oscuro para que se lea sobre el blanco */
+}
+
+.hero.noche .hero-texto h1,
+.hero.noche .hero-texto p {
+    color: #0a063d; /* Azul muy oscuro para contraste */
+    text-shadow: none; /* Quitamos sombras claras */
+}
+
+/* Ajuste del botón en modo luna */
+.hero.noche .btn {
+    background: #0a063d;
+    color: white;
+}
+
+.noche{
+    position:relative;
+    overflow:visible;
+    width:600px;
+    height:600px;
+    margin:120px auto;
+    color:var(--blanco);
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            var(--color-luna),
+            var(--color-atardecer)
+        ),
+        url('./imagenes/fondo.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Texto del Hero */
+
+.hero-texto{
+    position:relative;
+    font-size:25px;
+    z-index:1;
+    text-align:center;
+    color:var(--color-texto-verde);
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:var(--color-boton);
+    color:var(--color-texto-boton);
+    text-decoration:none;
+    font-size:20px;
+    border-radius:5px;
+}
+
+.servicios{
+    text-align:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.1) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            var(--color-madera) 2px,
+            transparent 2px
+        ),
+        linear-gradient(
+            90deg,
+            var(--color-madera-clara),
+            var(--color-madera)
+        );
+
+    background-size:100px 100%,100% 4px,100% 100%;
+
+    padding:2%;
+    position:relative;
+}
+
+/* Brillo */
+
+.servicios::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,.1),
+        transparent
+    );
+    transform:skewX(-25deg);
+}
+
+@keyframes madera-brillo{
+    0%{left:-100%;}
+    20%{left:150%;}
+    100%{left:150%;}
+}
+
+.servicios:hover{
+    transition:transform .3s ease;
+    filter:brightness(1.1);
+}
+
+.contenedor-servicios{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:350px;
+    gap:20px;
+    margin-top:20px;
+    overflow:hidden;
+}
+
+.card{
+    background:var(--color-card);
+    padding:20px;
+    border-radius:10px;
+    width:350px;
+    height:350px;
+    border:3px solid var(--color-beige);
+    box-shadow:0 4px 8px var(--color-sombra);
+    display:none;
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:fill;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.card.activo{
+    display:block;
+    animation:fadeIn .4s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.columna{
+    margin:60px 0;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+}
+
+.columna-1,
+.columna-2{
+    padding:50px;
+    width:220px;
+    text-align:center;
+    border-radius:5px;
+    height:350px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-madera-oscura) 0%,
+            var(--color-madera) 100%
+        );
+
+    border:2px solid var(--color-borde-madera);
+    color:var(--color-crema);
+}
+
+/* Flecha izquierda */
+
+.columna-1{
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(0,0,0,.05) 0,
+            rgba(0,0,0,.05) 1px,
+            transparent 1px,
+            transparent 40px
+        ),
+        var(--color-madera-clara);
+
+    font-size:30px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.columna-1::before{
+    content:"◀";
+    display:inline-block;
+    animation:moverIzquierda 1s infinite alternate ease-in-out;
+}
+
+/* Flecha derecha */
+
+.columna-2{
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(0,0,0,.05) 0,
+            rgba(0,0,0,.05) 1px,
+            transparent 1px,
+            transparent 40px
+        ),
+        var(--color-madera-clara);
+
+    font-size:30px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.columna-2::after{
+    content:"▶";
+    display:inline-block;
+    animation:moverDerecha 1s infinite alternate ease-in-out;
+}
+
+@keyframes moverIzquierda{
+    from{transform:translateX(0);}
+    to{transform:translateX(-15px);}
+}
+
+@keyframes moverDerecha{
+    from{transform:translateX(0);}
+    to{transform:translateX(15px);}
+}
+
+.pasto-oscuro {
+    background: #082b08; /* Verde bosque muy oscuro como la imagen */
+    padding: 80px 20px;
+    border-top: 10px solid #051a05;
+}
+
+.contacto-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Badge rojo pequeño */
+.badge {
+    background: #ef4444;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.contacto-desc {
+    color: #ffffff;
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.contenedor-contacto {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Tarjetas con efecto cristal oscuro */
+.contacto-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 40px;
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.card-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo de inputs de la imagen */
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #a7f3d0;
+    margin-bottom: 8px;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-nuevo input, 
+.form-nuevo textarea {
+    background: #113311 !important;
+    border: 1px solid #225522 !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    color: white !important;
+    font-size: 15px !important;
+}
+
+/* Botón estilo imagen */
+.btn-enviar-nuevo {
+    background: #f87171 !important; /* Salmón/Rojo suave */
+    color: white !important;
+    width: 100%;
+    padding: 18px !important;
+    border-radius: 15px !important;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #b91c1c;
+    margin-top: 10px;
+}
+
+/* Columna de info derecha */
+.dato {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.icon-circulo {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fbbf24;
+}
+
+.mini-mapa {
+    height: 180px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.mini-mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .contenedor-contacto { grid-template-columns: 1fr; }
+    .fila { grid-template-columns: 1fr; }
+}
+
+.galeria{
+    text-align:center;
+    border-left:0;
+    border-right:0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    padding:20px;
+}
+
+.grid img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 4px 8px var(--color-sombra);
+    transition:transform .3s ease, box-shadow .3s ease;
+    display:block;
+}
+
+.grid img:hover{
+    transform:scale(1.04);
+    box-shadow:0 8px 22px rgba(0,0,0,0.3);
+}
+
+@media(max-width:900px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:520px){
+    .grid{grid-template-columns:1fr;}
+}
+
+.contacto{
+    padding:50px;
+    text-align:center;
+    border-left:0;
+    border-right:0;
+}
+
+.contenedor-contacto{
+    display:flex;
+    justify-content:center;
+    gap:100px;
+    margin-top:50px;
+    font-size:33px;
+}
+
+.info{
+    color:var(--blanco);
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:525px;
+}
+
+input,
+textarea{
+    padding:34px;
+    font-size:33px;
+    border:2px solid var(--color-borde-input);
+}
+
+button{
+    background:var(--color-boton-contacto);
+    color:var(--blanco);
+    border:none;
+    font-size:30px;
+    padding:35px;
+    cursor:pointer;
+}
+
+/* ===========================
+   BADGE GRANDE ANIMADO
+=========================== */
+.badge-grande {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcb77, #4d96ff, #ff6b6b);
+    background-size: 300% 300%;
+    animation: arcoiris 3s ease infinite;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.25), 0 0 20px rgba(255,107,107,0.35);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+@keyframes arcoiris {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===========================
+   BOTONES TIPO SERVICIO (radio)
+   — botón a la DERECHA del campo —
+=========================== */
+.campo-con-boton {
+    display: flex;
+    flex-direction: row-reverse; /* campo izq, botón der */
+    gap: 10px;
+    align-items: stretch;
+    margin-bottom: 14px;
+}
+
+.campo-con-boton .campo {
+    flex: 1;
+    margin-bottom: 0;
+    min-width: 0;
+}
+
+.btn-radio-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 54px;
+}
+
+.btn-radio-wrap input[type="radio"] {
+    display: none;
+}
+
+.btn-servicio {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 6px !important;
+    border-radius: 12px !important;
+    border: 2px solid rgba(167, 243, 208, 0.5) !important;
+    color: #d1fae5 !important;
+    cursor: pointer !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+    line-height: 1 !important;
+    margin-bottom: 0 !important;
+    height: 100% !important;
+    min-height: 52px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.btn-servicio:hover {
+    background: rgba(167, 243, 208, 0.22) !important;
+    border-color: #a7f3d0 !important;
+    transform: scale(1.04) !important;
+}
+
+.btn-radio-wrap input[type="radio"]:checked + .btn-servicio {
+    background: #a7f3d0 !important;
+    color: #052b05 !important;
+    border-color: #6ee7b7 !important;
+    box-shadow: 0 4px 0 #1e8a55 !important;
+    transform: scale(0.97) !important;
+    font-weight: 900 !important;
+}
+
+/* ===========================
+   CONTACTO — inputs proporcionales
+=========================== */
+.contacto-card form {
+    width: 100% !important;
+}
+
+.contacto-card input,
+.contacto-card textarea {
+    padding: 11px 14px !important;
+    font-size: 14px !important;
+    border: 1px solid rgba(167, 243, 208, 0.35) !important;
+    border-radius: 10px !important;
+    background: rgba(0, 0, 0, 0.28) !important;
+    color: #ffffff !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.contacto-card input::placeholder,
+.contacto-card textarea::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.contacto-card textarea {
+    min-height: 90px !important;
+    resize: vertical !important;
+}
+
+/* Responsivo: botón debajo del campo en móvil */
+@media (max-width: 680px) {
+    .campo-con-boton {
+        flex-direction: column;
+    }
+    .btn-radio-wrap {
+        width: 100%;
+    }
+    .btn-servicio {
+        min-height: 44px !important;
+        height: auto !important;
+        width: 100% !important;
+    }
+    .contenedor-contacto {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .contacto-card {
+        padding: 20px !important;
+    }
+}
+
+/* ===========================
+   GALERÍA — cursor pointer
+=========================== */
+.galeria-img {
+    cursor: pointer;
+}
+
+/* ===========================
+   MODAL GALERÍA
+=========================== */
+.modal-galeria {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-galeria.activo {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-contenido {
+    background: linear-gradient(135deg, #082b08 0%, #0d3d0d 100%);
+    border-radius: 24px;
+    padding: 30px;
+    max-width: 560px;
+    width: 100%;
+    position: relative;
+    border: 2px solid rgba(167, 243, 208, 0.35);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+}
+
+.modal-contenido #modal-imagen {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 55vh !important;
+    object-fit: contain !important;
+    border-radius: 14px !important;
+    margin-bottom: 20px !important;
+    display: block !important;
+    background: rgba(0,0,0,0.3) !important;
+}
+
+.modal-info h3 {
+    color: #a7f3d0;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.modal-info p {
+    color: #d1fae5;
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.modal-btn-wa {
+    display: inline-block;
+    background: #25d366;
+    color: white !important;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 0 #1a9a4a;
+    transition: transform 0.15s ease;
+}
+
+.modal-btn-wa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #1a9a4a;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.12);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal-cerrar:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    background:var(--color-footer);
+    color:var(--blanco);
+    text-align:center;
+    padding:20px;
+}
+
+body{
+    background-color:var(--color-cielo);
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    object-fit:contain;
+}
+
+.imagenes{
+    width:100%;
+    max-width:150px;
+    height:auto;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* ===========================
+   ENLACES DE CONTACTO
+=========================== */
+
+.info a{
+    color:var(--blanco);
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.info a:hover{
+    color:yellow;
+    text-decoration:underline;
+}
+
+.info iframe{
+    margin-top:20px;
+    width:100%;
+    max-width:500px;
+    height:250px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.4);
+}
+/* ESTILO DEL BOTÓN WHATSAPP */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px; /* Distancia del borde inferior */
+    right: 30px;  /* Distancia del borde derecho */
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1); /* Se agranda un poquito al pasar el mouse */
+    background-color: #20ba5a;
+}
+#cambiodedia{
+     position: fixed;
+    bottom: 30px; /* Distancia del borde inferior */
+    left: 30px;  /* Distancia del borde izquierdo */
+    width: 60px;
+    height: 60px;
+    background-color: #eef7f1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+#cambiodedia:hover {
+    transform: scale(1.1); /* Se agranda un poquito al pasar el mouse */
+    background-color: #eef7f1;
+}
+/* Animación de pulso para llamar la atención */
+@keyframes pulso {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-btn {
+    animation: pulso 2s infinite;
+}
+
+@media (max-width:768px){
+
+    .header ul{
+        flex-direction:column;
+        top:20px;
+        right:10px;
+    }
+
+    .hero{
+        width:100%;
+        height:auto;
+        padding:80px 20px;
+        border-radius:20px;
+    }
+
+    .contenedor-servicios{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .columna{
+        flex-direction:row;
+        align-items:center;
+    }
+
+    .columna-1,
+    .columna-2{
+        width:20%;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid img{
+        aspect-ratio:4/3;
+    }
+
+    .contenedor-contacto{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    form{
+        min-width:100px;
+        max-width:400px;
+    }
+
+    .servicios::before{
+        animation:none;
+    }
+
+    .nube{
+        display:none;
+    }
+
+    .info{
+        text-align:center;
+        width:100%;
+        padding:10px;
+    }
+
+    .info p{
+        font-size:22px;
+    }
+
+    .info iframe{
+        width:100%;
+        height:220px;
+        max-width:350px;
+    }
+
+}
+
+@media (max-width:956px){
+
+    form{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        width:325px;
+    }
+
+    input,
+    textarea{
+        padding:34px;
+        font-size:33px;
+        border:2px solid var(--color-borde-input);
+    }
+}
+
+@media (max-width:680px){
+
+    .card{
+        width:250px;
+    }
+
 }
