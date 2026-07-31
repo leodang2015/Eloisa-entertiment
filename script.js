@@ -1,79 +1,107 @@
-// --- CARRUSEL DE SERVICIOS ---
+const cards = document.querySelectorAll(".card");
 
-// Seleccionamos todas las tarjetas y los botones de flecha
-const cards = document.querySelectorAll('.card');
-const btnNext = document.querySelector('.next');
-const btnPrev = document.querySelector('.prev');
-let currentIndex = 0; // Índice de la tarjeta que se está viendo
+// Botones de flechas
+const btnIzquierda = document.querySelector(".columna-1");
+const btnDerecha = document.querySelector(".columna-2");
 
-// Función para quitar la clase 'activo' de todas y ponérsela a la actual
-function updateCards(index) {
-    cards.forEach(card => card.classList.remove('activo'));
-    cards[index].classList.add('activo');
+// Índice actual
+let indice = 0;
+
+// Función para mostrar tarjeta
+function mostrarCard(index) {
+
+    // Oculta todas
+    cards.forEach(card => {
+        card.classList.remove("activo");
+    });
+
+    // Muestra la actual
+    cards[index].classList.add("activo");
 }
 
-// Al hacer clic en 'Siguiente'
-btnNext.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % cards.length; // Si llega al final, vuelve a 0
-    updateCards(currentIndex);
+// Flecha derecha
+btnDerecha.addEventListener("click", () => {
+
+    indice++;
+
+    // Si llega al final vuelve al inicio
+    if (indice >= cards.length) {
+        indice = 0;
+    }
+
+    mostrarCard(indice);
 });
 
-// Al hacer clic en 'Anterior'
-btnPrev.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Si baja de 0, va al final
-    updateCards(currentIndex);
+// Flecha izquierda
+btnIzquierda.addEventListener("click", () => {
+
+    indice--;
+
+    // Si pasa del inicio va al final
+    if (indice < 0) {
+        indice = cards.length - 1;
+    }
+
+    mostrarCard(indice);
 });
 
+let esNoche = false;
 
-// --- MODO DÍA / NOCHE ---
+const boton = document.getElementById("cambiodedia");
 
-const themeToggle = document.getElementById('theme-toggle');
+function actualizarModo() {
+    document.body.classList.toggle("oscuro", esNoche);
 
-function toggleTheme() {
-    // Agrega o quita la clase 'oscuro' al body
-    document.body.classList.toggle('oscuro');
-    
-    // Cambia el icono del botón
-    const isDark = document.body.classList.contains('oscuro');
-    themeToggle.textContent = isDark ? '🌙' : '☀️';
+    const hero = document.querySelector(".hero");
+    if (hero) {
+        hero.classList.toggle("noche", esNoche);
+    }
+
+    boton.textContent = esNoche ? "☀️" : "🌙";
 }
 
-// Ejecución automática por horario
-const currentHour = new Date().getHours();
-if (currentHour >= 18 || currentHour <= 6) {
-    document.body.classList.add('oscuro'); // Si es tarde/noche, activa el modo oscuro
-    themeToggle.textContent = '🌙';
+function aplicarModoNoche() {
+    const hora = new Date().getHours();
+    esNoche = hora >= 15 || hora <= 6;
+    actualizarModo();
 }
 
-themeToggle.addEventListener('click', toggleTheme);
+aplicarModoNoche();
 
+boton.addEventListener("click", () => {
+    esNoche = !esNoche;
+    actualizarModo();
+});
 
-// --- GALERÍA Y MODAL ---
+// ===========================
+// MODAL GALERÍA
+// ===========================
+const galeriaImgs = document.querySelectorAll(".galeria-img");
+const modalGaleria = document.getElementById("modal-galeria");
+const modalImagen = document.getElementById("modal-imagen");
+const modalTitulo = document.getElementById("modal-titulo");
+const modalDesc = document.getElementById("modal-desc");
+const modalCerrar = document.querySelector(".modal-cerrar");
 
-const modal = document.getElementById('modal-galeria');
-const modalImg = document.getElementById('modal-img');
-const modalTitle = document.getElementById('modal-title');
-const modalText = document.getElementById('modal-text');
-const closeBtn = document.querySelector('.close-modal');
-
-// Para cada imagen de la galería, escuchamos el clic
-document.querySelectorAll('.gal-img').forEach(img => {
-    img.addEventListener('click', () => {
-        modal.style.display = 'flex'; // Mostramos el modal
-        modalImg.src = img.src;      // Copiamos la ruta de la imagen
-        modalTitle.textContent = img.dataset.titulo; // Leemos el título del HTML
-        modalText.textContent = img.dataset.desc;    // Leemos la descripción
+galeriaImgs.forEach(img => {
+    img.addEventListener("click", () => {
+        modalImagen.src = img.getAttribute('src');
+        modalImagen.alt = img.alt;
+        modalTitulo.textContent = img.dataset.titulo;
+        modalDesc.textContent = img.dataset.desc;
+        modalGaleria.classList.add("activo");
+        document.body.style.overflow = "hidden";
     });
 });
 
-// Cerrar al pulsar la X
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+modalCerrar.addEventListener("click", () => {
+    modalGaleria.classList.remove("activo");
+    document.body.style.overflow = "";
 });
 
-// Cerrar al pulsar en el fondo negro
-window.onclick = (event) => {
-    if (event.target == modal) {
-        modal.style.display = 'none';
+modalGaleria.addEventListener("click", (e) => {
+    if (e.target === modalGaleria) {
+        modalGaleria.classList.remove("activo");
+        document.body.style.overflow = "";
     }
-};
+});
